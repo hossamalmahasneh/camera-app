@@ -38,3 +38,10 @@ html, body{
     right: 20px;
     z-index: 2;
 }
+#flip-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  
+}
