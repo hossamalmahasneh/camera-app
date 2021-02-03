@@ -1,29 +1,5 @@
 
-let supports = navigator.mediaDevices.getSupportedConstraints();
-if( supports['facingMode'] === true ) {
-  flipBtn.disabled = false;
-}
-let shouldFaceUser = true; //Default is the front cam
-let opts = {
-  audio: true,
-  video: true,
-  {
-    facingMode: shouldFaceUser ? 'user' : 'environment'
-  }
-}
-(async () => {
-  const stream = await navigator.mediaDevices.getUserMedia(opts);
-  videoElm.srcObject = stream;
-  videoElm.play();
-})();
-flipBtn.addEventListener('click', function(){
-  // we need to flip, stop everything
-  videoElm.pause()
-  videoElm.srcObject = null
-  // toggle \ flip
-  shouldFaceUser = !shouldFaceUser;
-  capture();
-})
+
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "environment" }, audio: false };
 // Define constants
